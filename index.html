@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f1e9">
+  <title>アーカイブサイト</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f1e9;
+      --ink: #24241f;
+      --muted: #77766e;
+      --line: #d8d4c9;
+      --accent: #405448;
+      --serif: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
+      --sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    .page { width: min(1440px, 100%); margin: 0 auto; padding: 0 5.2%; }
+    header {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      font-size: 11px;
+      letter-spacing: .12em;
+    }
+    .brand { color: var(--ink); text-decoration: none; font-weight: 600; }
+    .header-note { color: var(--muted); }
+    .hero { padding: clamp(64px, 12vw, 154px) 0 clamp(60px, 9vw, 112px); }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px; margin: 0 0 24px;
+      color: var(--accent); font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--accent); }
+    h1 {
+      margin: 0; font-family: var(--serif); font-size: clamp(42px, 8vw, 104px);
+      font-weight: 400; letter-spacing: .04em; line-height: 1.24;
+    }
+    .hero-bottom {
+      display: flex; justify-content: space-between; align-items: end; gap: 24px;
+      margin-top: clamp(34px, 6vw, 68px); padding-top: 18px; border-top: 1px solid var(--line);
+    }
+    .hero-bottom p { margin: 0; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+    .count { color: var(--ink) !important; font-variant-numeric: tabular-nums; }
+    .collection { padding-bottom: 100px; }
+    .section-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: 22px; padding-bottom: 13px; border-bottom: 1px solid var(--line);
+    }
+    .section-head h2 { margin: 0; font-size: 11px; font-weight: 500; letter-spacing: .17em; }
+    .section-head span { color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 5vw, 68px) clamp(16px, 2.4vw, 32px); }
+    figure { margin: 0; min-width: 0; }
+    .photo {
+      display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: contain;
+      background: #e6e2d8;
+    }
+    .caption { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding-top: 13px; }
+    .name { font-family: var(--serif); font-size: 17px; letter-spacing: .06em; }
+    .number { color: var(--muted); font-size: 10px; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
+    .words { margin: 12px 0 0; color: #66665e; font-family: var(--serif); font-size: 13px; letter-spacing: .07em; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+    .tag { display: inline-flex; gap: 5px; padding: 5px 9px; border: 1px solid var(--line); border-radius: 99px; color: var(--muted); font-size: 10px; letter-spacing: .04em; }
+    .tag strong { color: var(--accent); font-weight: 500; }
+    footer { display: flex; justify-content: space-between; gap: 16px; padding: 20px 0 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .page { padding-inline: 6%; }
+      header { min-height: 62px; }
+      .header-note { font-size: 9px; }
+      .hero { padding-top: 70px; }
+      .hero-bottom { align-items: start; }
+      .grid { grid-template-columns: 1fr; gap: 34px; }
+      .photo { aspect-ratio: 4 / 3; }
+      .caption { padding-top: 10px; }
+      .collection { padding-bottom: 68px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#top">アーカイブサイト</a>
+      <span class="header-note">COLLECTED MATERIALS</span>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="title">
+        <p class="eyebrow">Personal archive</p>
+        <h1 id="title">アーカイブサイト</h1>
+        <div class="hero-bottom">
+          <p>集めた資料</p>
+          <p class="count" id="item-count">05 ITEMS</p>
+        </div>
+      </section>
+
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="section-head">
+          <h2 id="collection-title">COLLECTION</h2>
+          <span>01 — 05</span>
+        </div>
+        <div class="grid" id="collection-grid">
+          <figure><img class="photo" src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-08%2013.48.19.png" alt="資料 01" loading="lazy"><figcaption><div class="caption"><span class="name">01</span><span class="number">NO. 01</span></div><p class="words">（ここに言葉）</p></figcaption></figure>
+          <figure><img class="photo" src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-19%2011.37.48.png" alt="資料 02" loading="lazy"><figcaption><div class="caption"><span class="name">02</span><span class="number">NO. 02</span></div><p class="words">（ここに言葉）</p></figcaption></figure>
+          <figure data-tags='[{"key":"名前","value":"ひょええ"},{"key":"いつ","value":"2020年代"},{"key":"どこで","value":"伏見稲荷"}]'><img class="photo" src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-05-19%2011.57.02.png" alt="資料 03" loading="lazy"><figcaption><div class="caption"><span class="name">03</span><span class="number">NO. 03</span></div><p class="words">（ここに言葉）</p><div class="tags" aria-label="タグ"></div></figcaption></figure>
+          <figure><img class="photo" src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-11-12%2014.57.33.png" alt="資料 04" loading="lazy"><figcaption><div class="caption"><span class="name">04</span><span class="number">NO. 04</span></div><p class="words">（ここに言葉）</p></figcaption></figure>
+          <figure><img class="photo" src="images/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202026-11-25%2014.21.37.png" alt="資料 05" loading="lazy"><figcaption><div class="caption"><span class="name">05</span><span class="number">NO. 05</span></div><p class="words">（ここに言葉）</p></figcaption></figure>
+        </div>
+      </section>
+    </main>
+    <footer><span>アーカイブサイト</span><span>END OF COLLECTION</span></footer>
+  </div>
+  <script>
+    const items = document.querySelectorAll("#collection-grid figure");
+    document.querySelector("#item-count").textContent = `${String(items.length).padStart(2, "0")} ITEMS`;
+    items.forEach((item) => {
+      const tags = JSON.parse(item.dataset.tags || "[]");
+      const container = item.querySelector(".tags");
+      if (!container) return;
+      tags.forEach(({ key, value }) => {
+        const tag = document.createElement("span");
+        tag.className = "tag";
+        const label = document.createElement("strong");
+        label.textContent = key;
+        const text = document.createElement("span");
+        text.textContent = value;
+        tag.append(label, text);
+        container.append(tag);
+      });
+    });
+  </script>
+</body>
+</html>
